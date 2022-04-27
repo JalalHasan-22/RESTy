@@ -1,7 +1,10 @@
 # RESTy Application
 
-## Pull Request
-[pullRequest](https://github.com/JalalHasan-22/resty/pull/1)
+
+[netlify link](https://adorable-palmier-da0f7d.netlify.app/)
+[PullRequest](https://github.com/JalalHasan-22/resty/pull/2)
+[PullRequest](https://github.com/JalalHasan-22/resty/pull/1)
+
 
 In this app, we are trying to build a postman clone, making the basic http methods such as get, post, put and delete.
 
