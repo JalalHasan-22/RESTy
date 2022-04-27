@@ -54,7 +54,7 @@ const Form = function (props) {
           <label>delete</label>
           <textarea
             id='text-area'
-            // onChange={props.handleBodyChange}
+            onChange={props.handleBodyChange}
             cols='50'
             rows='10'
           />
