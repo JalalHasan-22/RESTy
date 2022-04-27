@@ -1,0 +1,12 @@
+#header {
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+#header h1 {
+  text-align: center;
+  color: #eee;
+  display: inline-block;
+  margin: 0.5em auto;
+}
