@@ -17,3 +17,7 @@ In this lab, I've used JSON pretty to get a dummy JSON format data as a place ho
 I also implemented the four http methods, git, post, put and delete, all of the methods has been tested and functioning properly.
 
 ![UML](assets/lab26.drawio.png)
+
+## Notes for lab 28
+
+Since I have already implemented the functionality of getting the data from a third party API, I was finished in no time, the only thing that is still to be implemented is the useEffect hook which kept me thinking of how to implement it into this project; I'll try to comeup with something in the following day or two.
