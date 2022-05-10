@@ -4,6 +4,8 @@ import Header from './components/header/header.js';
 import Results from './components/results/results.js';
 import Form from './components/form/form.js';
 import { useState } from 'react';
+import History from './components/history/History';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [result, setResult] = useState();
@@ -75,19 +77,32 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Form
-        onSubmit={onSubmit}
-        updateMethod={updateMethod}
-        handleBodyChange={handleBodyChange}
-      />
-      <Results
-        method={method || ''}
-        url={result || ''}
-        headers={headers || ''}
-        loading={loading}
-      />
-      <Footer />
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            exact
+            path='/'
+            element={
+              <>
+                <Form
+                  onSubmit={onSubmit}
+                  updateMethod={updateMethod}
+                  handleBodyChange={handleBodyChange}
+                />
+                <Results
+                  method={method || ''}
+                  url={result || ''}
+                  headers={headers || ''}
+                  loading={loading}
+                />
+              </>
+            }
+          ></Route>
+          <Route path='/history' element={<History />}></Route>
+        </Routes>
+        <Footer />
+      </Router>
     </>
   );
 }
