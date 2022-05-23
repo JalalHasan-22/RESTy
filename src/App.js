@@ -93,106 +93,37 @@ function App() {
   });
   return (
     <>
-      <Header />
-      <Form
-        onSubmit={onSubmit}
-        updateMethod={updateMethod}
-        handleBodyChange={handleBodyChange}
-      />
-      <Results
-        method={method || ''}
-        url={result || ''}
-        headers={headers || ''}
-        loading={loading}
-        history={state}
-        handleClear={handleClear}
-        error={error}
-        handleClick={handleClick}
-      />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route
+            exact
+            path='/'
+            element={
+              <>
+                <Header />
+                <Form
+                  onSubmit={onSubmit}
+                  updateMethod={updateMethod}
+                  handleBodyChange={handleBodyChange}
+                />
+                <Results
+                  method={method || ''}
+                  url={result || ''}
+                  headers={headers || ''}
+                  loading={loading}
+                  history={state}
+                  handleClear={handleClear}
+                  error={error}
+                  handleClick={handleClick}
+                />
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+      </Router>
     </>
   );
 }
 
 export default App;
-
-// if (method === 'get') {
-//   try {
-//     response = await fetch(url, {});
-//     data = await response.json();
-//   } catch (err) {
-//     throw err;
-//   }
-// }
-
-//   if (method === 'post') {
-//     try {
-//       response = await fetch(url, {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: body,
-//       });
-//       data = await response.json();
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   }
-//   if (method === 'put') {
-//     response = await fetch(url, {
-//       method: 'PUT',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: body,
-//     });
-//   }
-//   if (method === 'delete') {
-//     response = await fetch(url, {
-//       method: 'DELETE',
-//     });
-//   }
-//   const headers = await response.headers.entries();
-//   for (let pairs of headers) {
-//     headerObject[pairs[0]] = pairs[1];
-//   }
-//   if (method) {
-//     setResult(data);
-//     setHeader(headerObject);
-//   } else {
-//     setResult('please select method');
-//   }
-//   setLoad(false);
-// }
-
-//   // return (
-//   //   <>
-//   //     <Router>
-//   //       <Header />
-//   //       <Routes>
-//   //         <Route
-//   //           exact
-//   //           path='/'
-//   //           element={
-//   //             <>
-//   //               <Form
-//   //                 onSubmit={onSubmit}
-//   //                 updateMethod={updateMethod}
-//   //                 handleBodyChange={handleBodyChange}
-//   //               />
-//   //               <Results
-//   //                 method={method || ''}
-//   //                 url={result || ''}
-//   //                 headers={headers || ''}
-//   //                 loading={loading}
-//   //               />
-//   //             </>
-//   //           }
-//   //         ></Route>
-//   //       </Routes>
-//   //       <Footer />
-//   //     </Router>
-//   //   </>
-//   // );
-// }
